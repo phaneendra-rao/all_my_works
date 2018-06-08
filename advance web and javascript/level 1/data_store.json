@@ -1,0 +1,210 @@
+{
+  "data_store": [
+                    {
+                    "product_id": 12345,
+                    "brand_name":"A brand",
+                    "product_name": "Product name A",
+                    "product_image": "https://some_product_image",
+                    "quantity": 200,
+                    "category": "Category A",
+                    "sub_category": "Category A 1",
+                    "product_type": [
+                                        {
+                                        "Sale": [
+                                                  {
+                                                    "price":2000
+                                                  }
+                                                ],
+                                        "Rent": [
+                                                  {
+                                                    "price":1000
+                                                  }
+                                                ]
+                                        }
+                                    ],
+                    "recommended_products": [
+                                              {
+                                                "product_ids":[
+                                                              123456,
+                                                              123457,
+                                                              123458,
+                                                              123459
+                                                             ]
+                                              }
+                                           ],
+                    "Payment_type": [
+                                          "Online",
+                                          "Cash on delivery",
+                                          "Phonepay",
+                                          "Wallets"
+                                        ],
+                    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+
+                  },
+
+                  {
+                  "product_id": 123456,
+                  "brand_name":"B brand",
+                  "product_name": "Product name B",
+                  "product_image": "https://some_product_image",
+                  "quantity": 250,
+                  "category": "Category B",
+                  "sub_category": "Category B 1",
+                  "product_type": [
+                                      {
+                                      "Sale": [
+                                                {
+                                                  "price":2500
+                                                }
+                                              ],
+                                      "Rent": [
+                                                {
+                                                  "price":1100
+                                                }
+                                              ]
+                                      }
+                                  ],
+                  "recommended_products": [
+                                            {
+                                              "product_ids":[
+                                                            12345,
+                                                            123457,
+                                                            123458,
+                                                            123459
+                                                           ]
+                                            }
+                                         ],
+                  "Payment_type": [
+                                        "Online",
+                                        "Cash on delivery",
+                                        "Phonepay",
+                                        "Wallets"
+                                      ],
+                  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+
+                },
+
+                {
+                "product_id": 123457,
+                "brand_name":"A brand",
+                "product_name": "Product name AA",
+                "product_image": "https://some_product_image",
+                "quantity": 280,
+                "category": "Category A",
+                "sub_category": "Category A 2",
+                "product_type": [
+                                    {
+                                    "Sale": [
+                                              {
+                                                "price":1500
+                                              }
+                                            ],
+                                    "Rent": [
+                                              {
+                                                "price":800
+                                              }
+                                            ]
+                                    }
+                                ],
+                "recommended_products": [
+                                          {
+                                            "product_ids":[
+                                                          12345,
+                                                          123456,
+                                                          123458,
+                                                          123459
+                                                         ]
+                                          }
+                                       ],
+                "Payment_type": [
+                                      "Online",
+                                      "Cash on delivery"
+
+                                    ],
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+
+              },
+
+              {
+              "product_id": 123458,
+              "brand_name":"B brand",
+              "product_name": "Product name BB",
+              "product_image": "https://some_product_image",
+              "quantity": 210,
+              "category": "Category BB",
+              "sub_category": "Category B 2",
+              "product_type": [
+                                  {
+                                  "Sale": [
+                                            {
+                                              "price":1200
+                                            }
+                                          ],
+                                  "Rent": [
+                                            {
+                                              "price":600
+                                            }
+                                          ]
+                                  }
+                              ],
+              "recommended_products": [
+                                        {
+                                          "product_ids":[
+                                                        123456,
+                                                        123457,
+                                                        123459
+                                                       ]
+                                        }
+                                     ],
+              "Payment_type": [
+                                    "Online",
+                                    "Cash on delivery"
+
+                                  ],
+              "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+
+            },
+
+            {
+            "product_id": 123459,
+            "brand_name":"C brand",
+            "product_name": "Product name CC",
+            "product_image": "https://some_product_image",
+            "quantity": 210,
+            "category": "Category CC",
+            "sub_category": "Category C 2",
+            "product_type": [
+                                {
+                                "Sale": [
+                                          {
+                                            "price":1600
+                                          }
+                                        ],
+                                "Rent": [
+                                          {
+                                            "price":800
+                                          }
+                                        ]
+                                }
+                            ],
+            "recommended_products": [
+                                      {
+                                        "product_ids":[
+                                                      123456,
+                                                      123457,
+                                                      123458
+                                                     ]
+                                      }
+                                   ],
+            "Payment_type": [
+                                  "Online",
+                                  "Cash on delivery"
+
+                                ],
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+
+            }
+
+          ]
+
+}

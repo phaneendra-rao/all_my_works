@@ -1,0 +1,17 @@
+Logic of my code index.html :
+   I have used EasyAutocomplete plugin to autocomplete the search field while typing, in index.html file there is only one search field and get info button,
+   just we need to search by name of pokemon or weakness of pokemon in that search field,
+   while typing we`ll get dropdown there itself then select that particular name and press get info button, according to name or weakness we`ll get info of that pokemon,
+
+Logic of my code custom.js :
+
+Initially all the names of pokemon and weaknesses of pokemon will be stored in one array using with that array we`ll use easyautocomplete plugin to display dropdown names and weaknesses of pokemon while typing in search field,
+
+the value which we are taking from that search field is going to pass as name parameter or weakness parameter to following created functions,
+
+   I created three functions one for pokemon details, one for pokemon next evolution and one for pokemon weaknesses,
+
+   we are passing the name parameter to pokemon details and pokemon next evolution so that we`ll get some response through that pokemon json url,
+   using forloops we validate and get particular pokemon information and displaying in proper manner.
+
+   we can also pass weakness parameter to pokemon weaknesses function and did the same procedure for this function too.

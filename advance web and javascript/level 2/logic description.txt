@@ -1,0 +1,21 @@
+Problem statement one : converting javascript to es6
+    I changed both check login normal function and the bubble sort normal function with es6 arrow functions
+
+    checklogin : here I also used default parameters i.e, all users data values in array.
+                 I have passed email and password to this function and checked with all users data and showing the output in alert box.
+    bubble sort : here I passed a array with random numbers to bubble sort ascending function and bubble sort descending function.
+                  I have showed the output in alert box.
+
+    Please see the demo in javascript_to_es6.html file in javascript_to_es6 folder provided.
+
+Problem statement two :
+
+    1. Passing season number and episode number to es6 arrow function called season_episode_numbers function with default parameter season_data to the called function.
+       using ajax and for of loop validated with each and every episode data and shown the response accordingly.
+
+    2. Passing as many number of episode ids separated by commas to the input field and using jquery we took that complete string and converted into array then after removed
+       duplicate numbers and stored final episode numbers in the an array and passed that array to episode_id_info which is also a es6 arrow function with default parameter
+       season_data url, here we used for in and for of loops to validate with that array values and showed the response appropriately.
+
+    3. Here we searched with episode name and passed that episode name to the es6 arrow function with default parameter season_data url,
+       we used for of loop to validate and shown proper response.

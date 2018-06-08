@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edwisor | Level 2</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/easy-autocomplete.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/easy-autocomplete.themes.css"> -->
+    <!-- <link rel="stylesheet" href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css?v=1.4">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+
+  </head>
+  <body>
+    <div class="container-fluid" id="title_and_description" style="margin-top:50px;">
+
+    </div>
+
+    <div class="container-fluid"style="margin-top:50px;margin-bottom:50px;">
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Season number and episode number</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group" style="margin-top:0px;">
+              <span style="color:red;font-size:1.3rem;" id="season_episode_errors"></span>
+              <input type="number" class="form-control" name="season_number" id="season_number" placeholder="Season number" required/>
+              <input type="number" class="form-control" name="episode_number" id="episode_number" placeholder="Episode number" required/>
+            </div>
+            <button type="button" id="season_episode_info" class="btn btn-default btn-block" name="button">Get info</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Enter episode ids separated by commas</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group" style="margin-top:0px;">
+              <span style="color:red;font-size:1.3rem;" id="episode_ids_errors"></span>
+              <p>Eg episode ids [2913, 2914, 2915, 2916, 2917, 2918, 2919]</p>
+              <input type="text" class="form-control" name="episode_ids" id="episode_ids" placeholder="Episode ids separated by commas. Eg: 1,2,3.."  data-role="tagsinput"  required/>
+            </div>
+            <button type="button" id="episode_ids_info" class="btn btn-default btn-block" name="button">Get info</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Enter episode name</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group"  >
+              <span style="color:red;font-size:1.3rem;" id="episode_name_errors"></span>
+              <input type="text" class="form-control" name="episode_name" id="episode_name" placeholder="Search by episode name" required/>
+            </div>
+            <button type="button" id="episode_name_info" class="btn btn-default btn-block" name="button">Get info</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom:50px;">
+      <div class="row" id="season_episode_response">
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="assets/js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <!-- // <script type="text/javascript" src="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script> -->
+    <script type="text/javascript" src="assets/js/jquery.easy-autocomplete.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js?v=1.3"></script>
+
+
+
+  </body>
+</html>

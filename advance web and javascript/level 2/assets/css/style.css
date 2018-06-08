@@ -1,0 +1,100 @@
+body{
+  background-color:#f6f7fa;
+}
+
+p{
+  font-size:1.5rem;
+}
+
+.form-group{
+  margin-top:50px;
+  width:100%;
+}
+
+.form-control
+{
+  margin-top:10px;
+}
+
+input[type=text], input[type=number]
+{
+
+    background-color:white;
+
+    box-shadow: inset 0px 0px 0px 0px red;
+    border:1px solid #e5e7ea;
+    color:#818387;
+
+}
+
+input[type=text]:focus {
+  border-color: #c2c4c6;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type=number]:focus {
+  border-color: #c2c4c6;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.btn-default{
+  margin-top:20px;
+  outline:none;
+  background-color: white;
+  border: 1px solid #e5e7ea;
+  color:#818387;
+}
+
+.btn-default:hover{
+  background-color: white;
+
+}
+
+#input_errors
+{
+  color:red;
+  font-size:1.3rem;
+
+}
+
+h3{
+  margin-top:6px;
+  font-family: 'Lato', sans-serif;
+}
+
+
+table, tbody, tr, td{
+  font-family: 'Lato', sans-serif;
+}
+
+table tbody tr td b{
+  font-weight:600;
+}
+
+.panel .panel-heading{
+  background-color:#f6f7fa;
+}
+
+.panel-heading img
+{
+
+  box-shadow: 0 0 46px #C0C0C0;
+}
+.panel{
+  border-radius: 0px;
+  border:none;
+background-color:#f6f7fa;
+box-shadow: 0 0 36px #C0C0C0;
+padding:8px;
+margin-bottom:50px;
+}

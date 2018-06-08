@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edwisor | Level 1</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/easy-autocomplete.min.css">
+    <!--<link rel="stylesheet" href="assets/css/easy-autocomplete.themes.css">-->
+    <link rel="stylesheet" href="assets/css/style.css?v=2.5">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+
+  </head>
+  <body >
+    <div class="container-fluid">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="form-group">
+
+            <span id="input_errors"></span>
+            <input type="text" id="pokemon_names_weaknesses"  class="form-control input-lg"   placeholder="Search by pokemon name or weakness" aria-describedby="basic-addon2">
+
+            <center>
+              <button class="btn btn-default" id="get_info">
+                 GET INFO
+              </button>
+            </center>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="get_response">
+
+    </div>
+
+    <script type="text/javascript" src="assets/js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+     $('.easy-autocomplete').removeAttr('style');
+   });
+    </script>
+    <script type="text/javascript" src="assets/js/jquery.easy-autocomplete.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js?v=2.1"></script>
+
+  </body>
+</html>
