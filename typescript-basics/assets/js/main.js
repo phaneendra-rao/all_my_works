@@ -26,7 +26,7 @@ var Youtube = /** @class */ (function () {
             return _this.videoViews;
         };
         this.setVideoViews = function (videoViews) {
-            return _this.videoViews = videoViews;
+            _this.videoViews = videoViews;
         };
         this.getVideoLikes = function () {
             return _this.videoLikes;
@@ -44,7 +44,7 @@ var Youtube = /** @class */ (function () {
             return _this.videoComments;
         };
         this.setVideoComments = function (videoComments) {
-            _this.videoComments = videoComments;
+            _this.videoComments = _this.videoComments.concat(videoComments);
         };
         this.getVideoRelatedVideos = function () {
             return _this.videoRelatedVideos;
@@ -85,38 +85,42 @@ var Facebook = /** @class */ (function () {
         this.getWorkAndEducation = function () {
             return _this.workAndEducation;
         };
-        this.setWorkAndEducation = function (WorkAndEducation) {
-            return _this.workAndEducation = WorkAndEducation;
+        this.setWorkAndEducation = function (Work, Highschool, University) {
+            //this.videoComments = videoComments.concat(videoComments);
+            _this.workAndEducation[0].work = _this.workAndEducation[0].work.concat(Work);
+            _this.workAndEducation[1].education[0].highSchool = _this.workAndEducation[1].education[0].highSchool.concat(Highschool);
+            _this.workAndEducation[1].education[1].university = _this.workAndEducation[1].education[1].university.concat(University);
         };
         this.getPlacesYouLived = function () {
             return _this.placesYouLived;
         };
         this.setPlacesYouLived = function (PlacesYouLived) {
-            return _this.placesYouLived = PlacesYouLived;
+            _this.placesYouLived = PlacesYouLived;
         };
         this.getContactAndBasicInfo = function () {
             return _this.contactAndBasicInfo;
         };
         this.setContactAndBasicInfo = function (ContactAndBasicInfo) {
-            return _this.contactAndBasicInfo = ContactAndBasicInfo;
+            _this.contactAndBasicInfo = ContactAndBasicInfo;
         };
         this.getFamilyMembersRelationShipStatus = function () {
             return _this.familyMembersRelationShipStatus;
         };
         this.setFamilyMembersRelationShipStatus = function (FamilyMembersRelationShipStatus) {
-            return _this.familyMembersRelationShipStatus = FamilyMembersRelationShipStatus;
+            _this.familyMembersRelationShipStatus = FamilyMembersRelationShipStatus;
         };
         this.getDetailsAboutYou = function () {
             return _this.detailsAboutYou;
         };
         this.setDetailsAboutYou = function (DetailsAboutYou) {
-            return _this.detailsAboutYou = DetailsAboutYou;
+            _this.detailsAboutYou.aboutYou = DetailsAboutYou;
         };
         this.getAllFriends = function () {
             return _this.allFriends;
         };
         this.setAllFriends = function (allFriends) {
-            return _this.allFriends = allFriends;
+            _this.allFriends = _this.allFriends.concat(allFriends);
+            ;
         };
         this.fb_id = fb_id;
         this.fb_username = fb_username;
@@ -140,9 +144,18 @@ var videoDisLikes = 2;
 var videoComments = [{ name: "Rohan", email: "rohan@gmail.com", comment: "good" }, { name: "Srujana", email: "srujana@gmail.com", comment: "Thanks a lot ! You saved me." }, { name: "Koushik", email: "koushik@gmail.com", comment: "Great tutorials !!! I love to see more tutorials from you." }, { name: "funny", email: "funny@gmail.com", comment: "Nice tutorials..!" }];
 var videoRelatedVideos = [{ channel: "edwisor", title: "Jquery ajax", views: 4210 }, { channel: "edwisor", title: "Jquery basics", views: 5010 }, { channel: "edwisor", title: "Responsive web design", views: 3115 }, { channel: "edwisor", title: "Angular", views: 210 }, { channel: "edwisor", title: "Node js", views: 4312 }];
 var youtubeVideo = new Youtube(channelName, channelSubscribers, videoUploadedDate, videoTitle, videoDescription, videoViews, videoLikes, videoDisLikes, videoComments, videoRelatedVideos);
-// $.('#videoTitle').text('Title ${youtubeVideo.getVideoTitle()}');
 var getYoutubeData = [{ channelName: youtubeVideo.getChannelName(), channelSubscribers: youtubeVideo.getChannelSubscribers(), videoUploadedDate: youtubeVideo.getVideoUploadedDate(), videoTitle: youtubeVideo.getVideoTitle(), videoDescription: youtubeVideo.getVideoDescription(), videoViews: youtubeVideo.getVideoViews(), videoLikes: youtubeVideo.getVideoLikes(), videoDisLikes: youtubeVideo.getVideoDisLikes(), videoComments: youtubeVideo.getVideoComments(), recommendedVideos: youtubeVideo.getVideoRelatedVideos() }];
 var completeYoutubeData = { youtubeData: getYoutubeData };
+console.log("Youtube class data");
+console.log(completeYoutubeData);
+console.log("After setting some data to youtube class");
+youtubeVideo.setChannelSubscribers(12340);
+youtubeVideo.setVideoViews(700);
+youtubeVideo.setVideoLikes(600);
+youtubeVideo.setVideoDisLikes(4);
+youtubeVideo.setVideoComments([{ name: "Ravi", email: "ravi@gmail.com", comment: "Very great tutorials" }, { name: "Sanjana", email: "sanjana@gmail.com", comment: "Thanks." }, { name: "Karthik", email: "karthik@gmail.com", comment: "I really appreciate you." }, { name: "phaneendra", email: "phaneendraraosuddapalli@gmail.com", comment: "Keep it up, great tutorials" }]);
+getYoutubeData = [{ channelName: youtubeVideo.getChannelName(), channelSubscribers: youtubeVideo.getChannelSubscribers(), videoUploadedDate: youtubeVideo.getVideoUploadedDate(), videoTitle: youtubeVideo.getVideoTitle(), videoDescription: youtubeVideo.getVideoDescription(), videoViews: youtubeVideo.getVideoViews(), videoLikes: youtubeVideo.getVideoLikes(), videoDisLikes: youtubeVideo.getVideoDisLikes(), videoComments: youtubeVideo.getVideoComments(), recommendedVideos: youtubeVideo.getVideoRelatedVideos() }];
+completeYoutubeData = { youtubeData: getYoutubeData };
 console.log(completeYoutubeData);
 var Work = ["facebook", "microsoft", "google"];
 var HighSchool = ["Sri Chaitanya Junior College", "SNVHS", "Bhashyam", "Triveni"];
@@ -169,4 +182,20 @@ var DetailsAboutYou = { aboutYou: "blah blah blah blah blah blah" };
 var facebookData = new Facebook(FB_id, FB_username, WorkAndEducation, PlacesYouLived, ContactAndBasicDetailsInfo, FamilyMembersRelationShipStatus, DetailsAboutYou, AllFriendsIds);
 var getFacebookData = [{ FB_ID: facebookData.getFB_id() }, { FB_username: facebookData.getFB_username() }, { WorkAndEducation: facebookData.getWorkAndEducation() }, { PlacesYouLived: facebookData.getPlacesYouLived() }, { ContactAndBasicDetailsInfo: facebookData.getContactAndBasicInfo() }, { FamilyMembersRelationShipStatus: facebookData.getFamilyMembersRelationShipStatus() }, { DetailsAboutYou: facebookData.getDetailsAboutYou() }, { AllFriends: facebookData.getAllFriends() }];
 var completeFacebookData = { Facebook: getFacebookData };
+console.log("Facebook class data");
+console.log(completeFacebookData);
+facebookData.setFB_username("Phaneendra rao suddapalli");
+Work = ["facebook 1", "microsoft 1", "google 1"];
+HighSchool = ["Sri Chaitanya Techno School", "Ramakrishna High School"];
+University = ["JNTUH"];
+facebookData.setWorkAndEducation(Work, HighSchool, University);
+facebookData.setDetailsAboutYou("Its my about section");
+// facebookData.setDetailsAboutYou();
+// facebookData.setContactAndBasicInfo();
+// facebookData.setFamilyMembersRelationShipStatus();
+// facebookData.setPlacesYouLived();
+// facebookData.setAllFriends();
+console.log("After setting some data to facebook class");
+getFacebookData = [{ FB_ID: facebookData.getFB_id() }, { FB_username: facebookData.getFB_username() }, { WorkAndEducation: facebookData.getWorkAndEducation() }, { PlacesYouLived: facebookData.getPlacesYouLived() }, { ContactAndBasicDetailsInfo: facebookData.getContactAndBasicInfo() }, { FamilyMembersRelationShipStatus: facebookData.getFamilyMembersRelationShipStatus() }, { DetailsAboutYou: facebookData.getDetailsAboutYou() }, { AllFriends: facebookData.getAllFriends() }];
+completeFacebookData = { Facebook: getFacebookData };
 console.log(completeFacebookData);

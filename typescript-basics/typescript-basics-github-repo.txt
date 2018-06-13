@@ -1,0 +1,7 @@
+https://github.com/phaneendra-rao/all_my_works/tree/master/typescript-basics
+
+This is my typescript basics repository, in this folder index.html page is a youtube themed page I thought to append console data to the index page
+and I tried a lot to do that but couldn`t do. I guess I need to learn more about typescript to do it.
+
+As per assignment I created Youtube class and Facebook class,
+All the properties of youtube and facebook are stored in an object by calling with methods/functions of class and shown on console.
