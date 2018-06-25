@@ -1,0 +1,166 @@
+<div class="container" style="margin-top:70px;">
+    <div class="row" *ngIf="characterDetails">
+        
+        <div class="col-md-8" *ngIf="characterDetails.gender">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5>GAME OF THRONES <br> <span>( {{characterDetails.gender}} Character )</span> </h5>
+            </div>
+            <div class="panel-body">
+             
+                <div class="row">
+                  <div class="col-md-4">
+                      <span *ngIf="characterDetails.gender=='Male'; else female"><img src="assets/images/male_character.jpg" alt=""  class="img img-responsive big-image"></span>
+                      <ng-template #female><img src="assets/images/female_character.jpg" alt=""  class="img img-responsive big-image"></ng-template>
+                      <div class="text-center"><a (click)="goBackToPreviousPage()" class="btn btn-default" style="margin-top:30px;margin-bottom:30px;"><i class="fa fa-arrow-left"></i> &nbsp;&nbsp; Go Back</a></div>
+                  </div> 
+                <div class="col-md-8">
+                   <table class="table table-responsive table-condensed table-bordered">
+                    <tbody>
+                      <tr *ngIf="characterDetails.name">
+                        <td><b>Name :</b></td><td>{{characterDetails.name}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.aliases.length==1 && characterDetails.aliases[0].length>1">
+                        <td><b>Aliase :</b></td><td>{{characterDetails.aliases}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.aliases.length>1">
+                          <td><b>Aliases :</b></td><td>{{characterDetails.aliases}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.allegiances.length==1">
+                          <td><b>Allegiance :</b></td><td>{{characterDetails.allegiances}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.allegiances.length>1">
+                          <td><b>Allegiances :</b></td><td>{{characterDetails.allegiances.length}} Houses</td>
+                      </tr>
+                    
+                      <tr *ngIf="characterDetails.allegiances.length>1">
+                            <td></td>
+                            <td>
+                              <ul *ngFor="let allegiance of characterDetails.allegiances" style="list-style-type:none;padding-left:0px;">
+                                <li><a href="{{allegiance}}" target="blank" style="text-decoration: none;color: black;">{{allegiance}}</a></li>
+                              </ul>
+                            </td>
+                          
+                      </tr>
+                      <tr *ngIf="characterDetails.born">
+                        <td><b>Born :</b></td><td>{{characterDetails.born}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.died">
+                          <td><b>Died :</b></td><td>{{characterDetails.died}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.father">
+                          <td><b>Father :</b></td><td>{{characterDetails.father}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.mother">
+                          <td><b>Mother :</b></td><td>{{characterDetails.mother}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.spouse">
+                          <td><b>Spouse :</b></td><td>{{characterDetails.spouse}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.culture">
+                          <td><b>Culture :</b></td><td>{{characterDetails.culture}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.books.length==1">
+                        <td><b>Character in :</b></td><td>( {{characterDetails.books.length}} Book )</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.books.length==1">
+                          <td></td><td><a href="{{characterDetails.books}}" target="blank" style="text-decoration: none;color: black;">{{characterDetails.books}}</a></td>
+                        </tr>
+                      <tr *ngIf="characterDetails.books.length>1">
+                          <td><b>Character in :</b></td><td>( {{characterDetails.books.length}} Books )</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.books.length>1">
+                          <td></td>
+                          <td>
+                            <ul *ngFor="let book of characterDetails.books" style="list-style-type:none;padding-left:0px;">
+                              <li><a href="{{book}}" target="blank" style="text-decoration: none;color: black;">{{book}}</a></li>
+                            </ul>
+                        </td>
+                        
+                      </tr>
+                      <tr *ngIf="characterDetails.playedBy.length>=1 && characterDetails.playedBy[0].length!=0">
+                          <td><b>Played By :</b></td><td>{{characterDetails.playedBy}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.povBooks.length>=1 && characterDetails.povBooks[0].length!=0">
+                          <td><b>Pov Books By :</b></td><td>{{characterDetails.povBooks}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.titles.length>=1 && characterDetails.titles[0].length!=0">
+                          <td><b>Titles By :</b></td><td>{{characterDetails.titles}}</td>
+                      </tr>
+                      <tr *ngIf="characterDetails.tvSeries.length>=1 && characterDetails.tvSeries[0].length!=0">
+                          <td><b>TV Series By :</b></td><td>{{characterDetails.tvSeries}}</td>
+                      </tr>
+                      
+                     
+                      
+                    </tbody>
+                   </table>
+
+
+                 </div>                
+               
+                </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-defualt" *ngIf="allCharacters[0]">
+              <div class="panel-heading" style="padding-bottom:0px;">
+                <input type="text" class="form-control" style="box-shadow: none;" [(ngModel)]="characterNames" placeholder="Search by character name...">
+              </div>
+              <div class="panel-body">
+                <ul style="list-style-type: none;padding-left:0px;" *ngFor="let character of allCharacters[0] | dataNames: characterNames">
+                  <li>
+                      <div class="block_data">
+                          <div class="block_inner_data">
+                            <div class="row">
+                              <span *ngIf="character.gender=='Male'; then male else female"></span>
+                  
+                              <ng-template #male>
+                                <img src="assets/images/male_character.jpg" style="margin-left:20px;margin-right:30px;" alt="" class="img img-responsive">
+                              </ng-template>
+                              <ng-template #female>
+                                <img src="assets/images/female_character.jpg" style="margin-left:20px;margin-right:20px;" alt="" class="img img-responsive"> </ng-template>
+                  
+                              <h5 *ngIf="character.name" style="margin-bottom:0px;">Name : {{character.name}}</h5>
+                  
+                              <h5 *ngIf="character.aliases.length==1 && character.aliases[0].length!=0" style="margin-top:0px;">Aliase : {{character.aliases[0]}}
+                                <br>
+                              </h5>
+                              <h5 *ngIf="character.aliases.length>1" style="margin-top:0px;">Aliase : {{character.aliases[0]}}
+                                <b> (+{{character.aliases.length-1}})</b>
+                                <br>
+                              </h5>
+                  
+                              <p style="margin-top:10px;" *ngIf="character.gender=='Male'; else female_text">
+                                <i class="fa fa-mars"></i>
+                                <span>{{character.gender}}</span>
+                              </p>
+                              <ng-template #female_text>
+                                <p style="margin-top:10px;">
+                                  <i class="fa fa-venus"></i>
+                                  <span>{{character.gender}}</span>
+                                </p>
+                              </ng-template>
+                  
+                              <p>
+                                <i class="fa fa-book"></i>
+                                <span *ngIf="character.books.length==1">This character in {{character.books.length}} book</span>
+                                <span *ngIf="character.books.length>1">This character in {{character.books.length}} books</span>
+                                <a [routerLink]="['/character',character.url | slice:49]" class="btn btn-sm btn-default" style="float:right;margin-right:20px;">Read More</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+  
+      
+    </div>
+  
+  </div>

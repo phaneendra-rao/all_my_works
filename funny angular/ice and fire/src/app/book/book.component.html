@@ -1,0 +1,136 @@
+<div class="container" style="margin-top:70px;">
+    <div class="row" *ngIf="bookDetails">
+        
+        <div class="col-md-8" *ngIf="bookDetails.isbn">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5>GAME OF THRONES <br> <span>( ISBN : {{bookDetails.isbn}} )</span> </h5>
+            </div>
+            <div class="panel-body">
+             
+                <div class="row">
+                  <div class="col-md-4">
+                      <img src="assets/images/book.png" alt=""  class="img img-responsive big-image">
+                      <div class="text-center"><a (click)="goBackToPreviousPage()" class="btn btn-default" style="margin-top:30px;margin-bottom:30px;"><i class="fa fa-arrow-left"></i> &nbsp;&nbsp; Go Back</a></div>
+                  </div> 
+                 <div class="col-md-8">
+                   <table class="table table-responsive table-condensed table-bordered">
+                    <tbody>
+                      <tr>
+                        <td><b>Name :</b></td><td>{{bookDetails.name}}</td>
+                      </tr>
+                      <tr>
+                        <td><b>Media Type :</b></td><td>{{bookDetails.mediaType}}</td>
+                      </tr>
+                      <tr>
+                          <td><b>Country :</b></td><td>{{bookDetails.country}}</td>
+                      </tr>
+                      <tr>
+                        <td><b>No.of Pages :</b></td><td>{{bookDetails.numberOfPages}}</td>
+                      </tr>
+                      <tr *ngIf="bookDetails.authors.length==1">
+                        <td><b>Author :</b></td><td>{{bookDetails.authors}}</td>
+                      </tr>
+                      <tr *ngIf="bookDetails.authors.length>1">
+                        <td><b>Authors :</b></td>
+                        <td>
+                          <ul *ngFor="let author of bookDetails.authors" style="list-style-type: none;padding-left: 0px;">
+                            <li>{{author}}</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr *ngIf="bookDetails.characters.length>1">
+                        <td><b>No.of Characters :</b></td><td>{{bookDetails.characters.length}}</td>
+                      </tr>
+                      <tr *ngIf="bookDetails.povCharacters.length>1">
+                          <td><b>No.of Pov Characters :</b></td><td>{{bookDetails.povCharacters.length}}</td>
+                      </tr>
+                      <tr>
+                          <td><b>Publisher :</b></td><td>{{bookDetails.publisher}}</td>
+                      </tr>
+                      <tr>
+                          <td><b>Released Date :</b></td><td>{{bookDetails.released | date}}</td>
+                      </tr>
+                      
+                    </tbody>
+                   </table>
+                   <div class="row">
+                    <div class="col-md-12">
+                        <a class="btn btn-default btn-block" *ngIf="bookDetails.characters.length>1"  data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                            <b>View Characters</b>
+                        </a>
+                        <div class="collapse" id="collapseExample1">
+                            <div class="well" style="border-radius:0px;height:200px;overflow-y:scroll;">
+                              <ul *ngFor="let character of bookDetails.characters" style="list-style-type:none;">
+                                <a href="{{character}}" target="blank" style="color:black;text-decoration:none;"><li>{{character}}</li></a>
+                              </ul>
+                            </div>
+                        </div> 
+                        <a class="btn btn-default btn-block" *ngIf="bookDetails.povCharacters.length>1"  data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                            <b>View Pov Caharacters</b>
+                        </a>
+                        <div class="collapse" id="collapseExample2">
+                              <div class="well"  style="border-radius:0px;height:200px;overflow-y:scroll;">
+                                  <ul *ngFor="let povCharacter of bookDetails.povCharacters" style="list-style-type:none;">
+                                      <a href="{{povCharacter}}" target="blank" style="color:black;text-decoration:none;"><li>{{povCharacter}}</li></a>
+                                    </ul>
+                              </div>
+                        </div>
+                    </div>
+                    
+                   </div>
+
+                 </div>                
+               
+                </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-defualt" *ngIf="allBooks[0]">
+            <div class="panel-heading" style="padding-bottom:0px;">
+              <input type="text" class="form-control" style="box-shadow: none;" [(ngModel)]="bookNames" placeholder="Search by book name..." />
+            </div>
+            <div class="panel-body">
+              <ul style="list-style-type: none;padding-left:0px;" *ngFor="let book of allBooks[0] | dataNames: bookNames">
+                <li>
+                    <div class="block_data">
+                        <div class="block_inner_data">
+                          <div class="row">
+                            <img src="assets/images/book.png" alt="" class="img img-responsive">
+                            <h5>{{book.name}}</h5>
+                            <span>( {{book.mediaType}} )</span>
+                
+                            <p style="margin-top:5px;">
+                              <i class="fa fa-address-book-o"></i>
+                              <span *ngIf="book.authors.length==1; else skip">{{book.authors[0]}}</span>
+                              <ng-template #skip>
+                                <span style="margin:10px;">{{book.authors[0]}}
+                                  <b>...</b>
+                                </span>
+                              </ng-template>
+                            </p>
+                            <p>
+                              <i class="fa fa-file"></i>
+                              <span>{{book.numberOfPages}}</span>
+                            </p>
+                            <p>
+                              <i class="fa fa-calendar"></i>
+                              <span>{{book.released | date}}</span>
+                              <a [routerLink]="['/book',book.url | slice:44]" class="btn btn-sm btn-default" style="float:right;margin-right:20px;">Read More</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+      
+    </div>
+  
+  </div>
