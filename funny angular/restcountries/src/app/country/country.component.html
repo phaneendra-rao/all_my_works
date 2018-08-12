@@ -1,0 +1,44 @@
+<ngx-spinner type = "timer" bdColor = "rgb(51,51,51,1)"></ngx-spinner>
+<div class="container-fluid">
+    <div class="container" *ngIf="singleCountry.length!=0">
+        
+        
+         <div class="col-md-10 offset-md-1" *ngFor="let singleCountry of singleCountry" >
+           
+            <div class="card" *ngIf="singleCountry.length!=0">
+                <img class="card-img-top img-fluid" *ngIf="singleCountry.flag.length!=0"  src="{{singleCountry.flag}}" alt="{{singleCountry.name}}">
+                 <div class="card-body" style="padding:8px;">
+                  <h3 class="card-title countryName text-center">{{singleCountry.name}}</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngIf="singleCountry.capital.length!=0" >Capital : {{singleCountry.capital}}</li>
+                    <li class="list-group-item" *ngIf="singleCountry.subregion.length!=0" >Sub Region : {{singleCountry.subregion}}</li>
+                    <li class="list-group-item" *ngIf="singleCountry.population!=undefined" >Population : {{singleCountry.population}}</li>
+                    <li class="list-group-item" *ngIf="singleCountry.area!=undefined" >Area : {{singleCountry.area}}</li>
+
+                    <li class="list-group-item" *ngIf="singleCountry.languages.length!=0">
+                      Languages : 
+                      <span *ngFor="let language of singleCountry.languages">
+                        <a [routerLink]="['/countries/language/',language.iso639_1]" *ngIf="language.iso639_1!=null" style="float:right;">{{language.name}}</a><br>
+                      </span>
+                    </li>
+
+                    <li class="list-group-item" *ngIf="singleCountry.currencies.length!=0" >
+                        Currency : 
+                        <span *ngFor="let currency of singleCountry.currencies">
+                          <a [routerLink]="['/countries/currency/',currency.code]" *ngIf="currency.code!=null" style="float:right;">{{currency.name}}</a><br>
+                        </span>
+                    </li>
+
+                    <li class="list-group-item"><a (click)="goBackToPreviousPage()" class="btn btn-default btn-sm text-center"><i class="fa fa-arrow-left"></i> &nbsp;&nbsp; Go Back</a> <a [routerLink]="['/home']"  class="btn btn-default btn-sm text-center" style="float:right;color:black;"><i class="fa fa-home"></i> &nbsp;&nbsp; Home</a></li>
+                     
+                  </ul>
+            </div>
+ 
+         </div>
+        
+       
+        
+    </div>
+ 
+ </div>

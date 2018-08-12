@@ -1,0 +1,25 @@
+<ngx-spinner type = "timer" bdColor = "rgb(51,51,51,1)"></ngx-spinner>
+<div class="container-fluid">
+   <div class="container">
+        
+      <div class="col-md-12">
+        <div class="row" *ngIf="allRegions.length!=0" >
+             
+            <div class="col-md-4" *ngFor="let data of allRegions">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/world-map.png" alt="Card image cap">
+                     <div class="card-body">
+                      <h3 class="card-title">{{data.regionName}}</h3>
+                      <p class="card-text">{{data.regionName}} has <b>{{data.countriesCount}}</b> <span *ngIf="data.countriesCount>1; else elseBlock;"> countries.</span> <ng-template #elseBlock> country.</ng-template></p>
+                      <a [routerLink]="['/countries',data.regionName]" class="btn btn-sm btn-default">Go In-Detail</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+      
+       
+   </div>
+
+</div>
